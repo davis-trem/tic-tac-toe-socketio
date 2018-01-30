@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1><a href="/waitingroom">Find Game</a></h1>
+                </div>
+                <div class="col">
+                    <h1>Invite A Friend</h1>
+                    <input type="text" id="friendEmail" placeholder="Enter Friend's Email"/>
+                    <input type="button" value="Send Invite" onclick="invite()"/>
+                </div>
+                <div class="col">
+                    <h1>Games in Session</h1>
+                    <ul id="roomlist"></ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/indexClient.js"></script>
+    </body>
+</html>

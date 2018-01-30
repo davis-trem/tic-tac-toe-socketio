@@ -1,0 +1,29 @@
+.center{
+    text-align: center;
+}
+
+#board{
+    margin: 0 auto;
+    text-align: center;
+    width: 85%;
+    height: 85%;
+}
+#board td{
+    font-size: 8em;
+    width: 33%;
+}
+#board, #board tr, #board td{
+    border: solid 1px black;
+}
+
+#cover{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(100, 180, 230, 0.3);
+}
+
+#chat{
+    height: 80%;
+    width: 100%;
+}

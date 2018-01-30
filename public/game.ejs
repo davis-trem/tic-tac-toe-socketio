@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <h2 id="player"></h2>
+                    <h2 id="status"></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col center">
+                    <div id="cover">WAITING FOR OPPONENT</div>
+                    <table id="board">  
+                        <tr>
+                            <td id="square0" onclick="moveMade(this)">&nbsp;</td>
+                            <td id="square1" onclick="moveMade(this)">&nbsp;</td>
+                            <td id="square2" onclick="moveMade(this)">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td id="square3" onclick="moveMade(this)">&nbsp;</td>
+                            <td id="square4" onclick="moveMade(this)">&nbsp;</td>
+                            <td id="square5" onclick="moveMade(this)">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td id="square6" onclick="moveMade(this)">&nbsp;</td>
+                            <td id="square7" onclick="moveMade(this)">&nbsp;</td>
+                            <td id="square8" onclick="moveMade(this)">&nbsp;</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-3">
+                    <textarea id="chat" readonly></textarea>
+                    <input type="text" id="message" placeholder="Enter message" />
+                    <input type="button" value="Send" onclick="sendChat()" />
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/gameClient.js"></script>
+    </body>
+</html>
