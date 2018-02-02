@@ -2,6 +2,7 @@
 const express = require('express');
 const routes = require('./routes/routes');
 const socket = require('socket.io');
+const nodemailer = require('nodemailer');
 
 let app = express();
 
@@ -13,6 +14,15 @@ app.set('view engine', 'ejs');
 
 //sets up routes for web pages
 routes(app);
+
+//for sending email
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'tictactoeonlinejs@gmail.com',
+        pass: 'toeTacTic'
+    }
+});
 
 let server = app.listen(app.get('port'), ()=>{
     console.log('server running...');
@@ -39,8 +49,21 @@ lobby.on('connection', (socket)=>{
         });
     }
 
-    socket.on('sendEmail', (toEmail, roomTag)=>{
-        
+    socket.on('sendEmail', (toEmail, link)=>{
+        var mailOptions = {
+            from: 'tictactoeonlinejs@gmail.com',
+            to: toEmail,
+            subject: 'You\'ve Been Invited to Play TicTacToe',
+            text: 'Click link to play:' + link
+        };
+            
+        transporter.sendMail(mailOptions, (error, info)=>{
+            if(error) {
+                console.log(error);
+            }else{
+                console.log('Email sent: ' + info.response);
+            }
+        });
     });
 });
 
