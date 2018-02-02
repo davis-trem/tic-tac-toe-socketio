@@ -21,7 +21,7 @@ socket.on('removeRoom', (roomTag)=>{
 
 function invite(){
     let id = socket.id.replace('/lobby#','');
-    let email = document.getElementById('friendEmail').innerHTML;
+    let email = document.getElementById('friendEmail').value;
     socket.emit('sendEmail', email, window.location.href+'game/'+id);
     window.location.href = '/game/' + id;
 }
