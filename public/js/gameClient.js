@@ -184,6 +184,7 @@ socket.on('responseKick', ()=>{
 function sendChat(){
     let message = handler +': '+ document.getElementById('message').value;
     socket.emit('sendMessage', roomTag, message);
+    document.getElementById('message').value = '';
 }
 
 socket.on('broadcastMessage', (message)=>{
