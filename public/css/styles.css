@@ -27,3 +27,10 @@
     height: 80%;
     width: 100%;
 }
+
+/*Bootstrap's sm breakpoint*/
+@media screen and (max-width: 540px) {
+    #chat{
+        height: 20%;
+    }
+}

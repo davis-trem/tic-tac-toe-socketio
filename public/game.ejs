@@ -5,6 +5,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
     </head>
     <body>
+        <% include ./partials/nav %>
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
@@ -33,14 +35,22 @@
                         </tr>
                     </table>
                 </div>
-                <div class="col-3">
+                <div class="col-md-3  col-sm-12">
                     <textarea id="chat" readonly></textarea>
-                    <input type="text" id="message" placeholder="Enter message" />
-                    <input type="button" value="Send" onclick="sendChat()" />
+                    <div class="input-group mb-3">
+                        <input type="text" id="message"  class="form-control" placeholder="Enter message" />
+                        <div class="input-group-append">
+                            <input type="button" class="btn btn-success" value="Send" onclick="sendChat()" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <script src="/js/gameClient.js"></script>
+        <script src="/js/invitation.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>

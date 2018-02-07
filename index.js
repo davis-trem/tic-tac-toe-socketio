@@ -42,9 +42,9 @@ lobby.on('connection', (socket)=>{
         gameRoom.in(roomsClone[i]).clients((err, clients)=>{
             if(err) throw err;
             //if no ones in the room, remove it from list
-            if(clients == 0)
+            if(clients.length == 0)
                 rooms = rooms.filter((tag)=>{return tag != roomsClone[i]});
-            if(clients > 1)
+            if(clients.length > 1)
                 lobby.emit('displayRoom', roomsClone[i]);
         });
     }

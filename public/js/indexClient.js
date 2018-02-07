@@ -18,10 +18,3 @@ socket.on('removeRoom', (roomTag)=>{
         roomslist.innerHTML += '<li><a href="/game/'+rooms[i]+'">ROOM '+rooms[i]+'</a></li>';
     }
 });
-
-function invite(){
-    let id = socket.id.replace('/lobby#','');
-    let email = document.getElementById('friendEmail').value;
-    socket.emit('sendEmail', email, window.location.href+'game/'+id);
-    window.location.href = '/game/' + id;
-}
