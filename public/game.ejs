@@ -8,37 +8,40 @@
         <% include ./partials/nav %>
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <h2 id="player"></h2>
-                    <h2 id="status"></h2>
-                </div>
-            </div>
+            
             <div class="row">
                 <div class="col center">
-                    <div id="cover">WAITING FOR OPPONENT</div>
-                    <table id="board">  
-                        <tr>
-                            <td id="square0" onclick="moveMade(this)">&nbsp;</td>
-                            <td id="square1" onclick="moveMade(this)">&nbsp;</td>
-                            <td id="square2" onclick="moveMade(this)">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td id="square3" onclick="moveMade(this)">&nbsp;</td>
-                            <td id="square4" onclick="moveMade(this)">&nbsp;</td>
-                            <td id="square5" onclick="moveMade(this)">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td id="square6" onclick="moveMade(this)">&nbsp;</td>
-                            <td id="square7" onclick="moveMade(this)">&nbsp;</td>
-                            <td id="square8" onclick="moveMade(this)">&nbsp;</td>
-                        </tr>
-                    </table>
+                    <div class="row">
+                        <div class="col center">
+                            <h2 id="player"></h2>
+                            <h2 id="status"></h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="cover"><h3>WAITING FOR OPPONENT</h3></div>
+                        <table id="board">
+                            <tr>
+                                <td id="square0" onclick="moveMade(this)">&nbsp;</td>
+                                <td id="square1" onclick="moveMade(this)">&nbsp;</td>
+                                <td id="square2" onclick="moveMade(this)">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td id="square3" onclick="moveMade(this)">&nbsp;</td>
+                                <td id="square4" onclick="moveMade(this)">&nbsp;</td>
+                                <td id="square5" onclick="moveMade(this)">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td id="square6" onclick="moveMade(this)">&nbsp;</td>
+                                <td id="square7" onclick="moveMade(this)">&nbsp;</td>
+                                <td id="square8" onclick="moveMade(this)">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
                 <div class="col-md-3  col-sm-12">
                     <textarea id="chat" readonly></textarea>
                     <div class="input-group mb-3">
-                        <input type="text" id="message"  class="form-control" placeholder="Enter message" />
+                        <input type="text" id="message"  class="form-control" placeholder="Enter message" onkeypress="if(event.keyCode == 13){sendChat()}" />
                         <div class="input-group-append">
                             <input type="button" class="btn btn-success" value="Send" onclick="sendChat()" />
                         </div>

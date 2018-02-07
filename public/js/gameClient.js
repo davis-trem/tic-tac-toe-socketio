@@ -54,6 +54,7 @@ socket.on('sendSpectatorBoardResponse', (squares)=>{
     if(!isPlayer){
         for(var i = 0; i < squares.length; i++){
             document.getElementById("square"+i).innerHTML = squares[i];
+            document.getElementById("square"+i).style.color = (squares[i] == 'X') ? '#d125ba' : '#258cd1';
         }
         let x = squares.filter((e)=>{return e == 'X'}).length;
         let o = squares.filter((e)=>{return e == 'O'}).length;
@@ -87,6 +88,7 @@ function moveMade(element){
 //server tell everyone about the move that was made
 socket.on('updateBoard', (iconSent, pos)=>{
     document.getElementById(pos).innerHTML = iconSent;
+    document.getElementById(pos).style.color = (iconSent == 'X') ? '#d125ba' : '#258cd1'; 
     document.getElementById(pos).style.cursor = 'default';
     //if you are the player that did not make the move, its your turn
     if(isPlayer && icon != iconSent)
@@ -137,8 +139,8 @@ function done(result){
     cover.innerHTML = (result == 'DRAW') ? '<h3>DRAW! Both yall suck</h3>': '<h3>'+result+' WON!</h3>';
     if(isPlayer){
         cover.innerHTML += '<h3>Play Again?</h3><br/>'
-            +'<input type="button" value="YES" onclick="requestRematch()">'
-            +'<input type="button" value="NO" onclick="kickEveryone()">';
+            +'<input type="button" class="btn btn-success" value="YES" onclick="requestRematch()">'
+            +'<input type="button" class="btn btn-danger" value="NO" onclick="kickEveryone()">';
     }
 }
 
