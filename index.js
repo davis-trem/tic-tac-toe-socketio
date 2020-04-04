@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'tictactoeonlinejs@gmail.com',
-        pass: 'toeTacTic'
+        pass: '****'
     }
 });
 
